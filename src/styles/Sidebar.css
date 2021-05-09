@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@400;500&display=swap');
+
+.sidebar {
+  height: 100%;
+  /* background-color: antiquewhite; */
+  width: 31vh;
+  position: fixed;
+  overflow-x: hidden;
+  z-index: 1  ;
+}
+
+.sidebar::-webkit-scrollbar-thumb { 
+  background: white;
+
+}
+.sidebar:hover::-webkit-scrollbar-thumb { 
+  background: #C8C8C8;
+}
+
+.sidebar-top{
+  margin: 1.5vh;
+  margin-left: 3.1vh;
+  padding: 0.5vh 0.5vh;
+  /* position: fixed; */
+}
+
+.ham-menu {
+  width: 3.0vh;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.ham-menu {
+
+}
+
+.site-icon{
+  width: 4.0vh;
+  margin-left: 3.3vh;
+  margin-right: 0.1vh;
+  vertical-align: middle;
+}
+
+.site-name{
+  font-family: 'Oswald', sans-serif;
+  display: inline;
+  vertical-align: top;
+  font-size: 2.5vh;
+  vertical-align: middle;
+}
+
+li {
+  list-style: none;
+}
+
+.content ul {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  padding-inline-start: 0px;
+  margin-top: 3vh;
+}
+.content ul li {
+  height: 5.6vh;
+  cursor: pointer;
+  margin-right: 0.3rem;
+}
+
+li .li-icon {
+  padding: 0.2vh 0.2vh;
+  vertical-align: middle;
+  margin-top: 0.9vh;
+  margin-left: 3vh;
+  margin-right: 3vh;
+  margin-bottom: 0.9vh;
+  color: #616161;
+}
+
+li .sidebar-txt{
+  display: inline;
+  /* vertical-align: middle; */
+  font-size: 0.88rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  margin-top: 2rem;
+}
+
+ul .active{
+  background-color: #D0D0D0 !important;
+  /* font-family: 'Poppins', sans-serif !important; */
+  font-weight: bold;
+}
+
+ul li .active-icon{
+  color: #FF0000;
+}
+
+ul li:hover{
+  background-color: #F0F0F0;
+}
+
+.smaller-icon{
+  margin-left: 3.3vh !important;
+}
+
+hr{
+  border-color: rgba(0,0,0,0.1);
+  border-width: 0.1px;
+  margin-bottom: 2vh;
+}
+
+.sidebar-txt-2 {
+  margin-left: 3vh;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.92rem;
+  color: #606060;
+  font-weight: 500;
+  margin-bottom: 1vh;
+}
+
+.sidebar-txt-3 {
+  margin-left: 3vh;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
+  color: #606060;
+  font-weight: 500;
+  margin-bottom: 1vh;
+}
