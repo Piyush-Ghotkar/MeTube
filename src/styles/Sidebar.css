@@ -7,7 +7,7 @@
   width: 32.6vh;
   position: fixed;
   overflow-x: hidden;
-  z-index: 1  ;
+  z-index: 2  ;
 }
 
 ::-webkit-scrollbar-track {
@@ -27,7 +27,7 @@
   width: 27.4vh;
   /* padding: 0.5vh 0.5vh; */
   position: fixed;
-  background-color: white;
+  background-color: #ffffff63;
 }
 
 .ham-menu {
@@ -61,6 +61,10 @@
 
 li {
   list-style: none;
+}
+
+.close-max{
+  display: none;
 }
 
 .content ul {
@@ -142,4 +146,73 @@ hr{
   font-weight: 500;
   margin-bottom: 1vh;
   cursor: pointer;
+}
+
+
+
+.close-min{
+  display: none;
+}
+
+.min-sidebar{
+  width: 4.5rem;
+}
+
+.min-sidebar ul {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  padding-inline-start: 0px;
+  margin-top: 3vh;
+  padding-top: 2.5rem;
+}
+
+.min-sidebar ul li {
+  vertical-align: middle;
+  height: 4.5rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.min-sidebar li .li-content{
+  padding-top: 0.8rem;
+  padding-bottom: 0.5rem;
+}
+
+.min-sidebar li .li-icon {
+  padding: 0.2vh 0.2vh;
+  margin: auto;
+  display: block;
+  /* margin-top: 0.9vh; */
+  /* margin-left: 3vh;
+  margin-right: 3vh;
+  margin-bottom: 0.9vh; */
+  color: #616161;
+}
+
+.min-sidebar li .sidebar-txt{
+  display: inline;
+  text-align: center;
+  font-size: 0.65rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.min-sidebar ul .active{
+  /* font-family: 'Poppins', sans-serif !important; */
+  font-weight: bold;
+  color: #c00;
+}
+
+.min-sidebar ul .active:hover{
+  background-color: #d9d9d9 !important;
+  /* font-family: 'Poppins', sans-serif !important; */
+  font-weight: bold;
+}
+
+.min-sidebar ul li .active-icon{
+  color: #FF0000;
+}
+
+.min-sidebar ul li:hover{
+  background-color: #F0F0F0;
 }

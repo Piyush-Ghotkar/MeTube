@@ -2,13 +2,24 @@
 
 
 .header{
-    background-color: #fffffff5;
-    margin-left: 32.6vh;
+    /* margin-left: 32.6vh;*/
+    background-color: #fffffffa; 
     /* padding: 0.8rem; */
     position: fixed;
     right: 0px;
     left: 0px;
     z-index: 1;
+
+    overflow: hidden;
+    white-space: nowrap; 
+}
+
+.header-top-margin{
+    margin-left: 32.6vh;
+}
+
+.header-bottom-margin{
+    margin-left: 4.5rem;
 }
 
 .inputs{
@@ -153,6 +164,7 @@ input[type=text]:focus {
 .header-hr{
     margin-block-start: 0em;
     margin-block-end: 0em;
+    z-index: 3;
 }
 
 .top-nav{

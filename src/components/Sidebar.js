@@ -36,7 +36,7 @@ function Siderbar(){
             </div>
             
             <div className="content">
-                <ul>
+                <ul className=""> {/*TODO: Add react state close-max/___ */}
                     <li className="active">
                         <HomeIcon className="active-icon li-icon " />
                          <div className="sidebar-txt">Home</div>
@@ -162,7 +162,43 @@ function Siderbar(){
                 </ul>
             </div>
 
-        </div>
+
+            <div className="min-sidebar">
+                <ul className="close-min"> {/*TODO: Add react state close-min/___ */}
+                        <li className="active">
+                            <div className="li-content">
+                                <HomeIcon className="active-icon li-icon " style={{ fontSize: 25 }} />
+                                <div className="sidebar-txt">Home</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="li-content">
+                                <ExploreIcon className="li-icon"/>
+                                    <div className="sidebar-txt">
+                                    Explore
+                                    </div>
+                            </div>
+                        </li>
+                        <li >
+                            <div className="li-content">
+                                <SubscriptionsIcon className="li-icon smaller-icon" style={{ fontSize: 20 }}/>
+                                    <div className="sidebar-txt">
+                                    Subscriptions
+                                    </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="li-content">
+                                <VideoLibraryIcon className="li-icon"/>
+                                <div className="sidebar-txt">
+                                Library
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
         </>
     );
 }

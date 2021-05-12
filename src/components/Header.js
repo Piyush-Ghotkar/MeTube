@@ -11,6 +11,7 @@ function Header(){
 return (
     <>
     <div className="header">
+        <div className="header-top-margin">
         <div className="inputs">
             
             <input type="text" placeholder="Search" />
@@ -52,24 +53,26 @@ return (
             <AccountCircleIcon className="account-icon"  style={{ fontSize: 34 }} />
 
         </div>
-
-        <hr className="header-hr" />
-
-        <div className="top-nav">
-            <ul>
-                <li className="active">All</li>
-                <li>Live</li>
-                <li>Music</li>
-                <li>Technology</li>
-                <li>Coding</li>
-                <li>Comedies</li>
-                <li>Trailers</li>
-                <li>Cricket</li>
-            </ul>    
         </div>
+ 
+        <div className="header-top-margin">   {/*TODO: use react .header-top/bottom-margin */}
+            <hr className="header-hr" />
 
-        <hr className="header-hr" />
+            <div className="top-nav">
+                <ul>
+                    <li className="active">All</li>
+                    <li>Live</li>
+                    <li>Music</li>
+                    <li>Technology</li>
+                    <li>Coding</li>
+                    <li>Comedies</li>
+                    <li>Trailers</li>
+                    <li>Cricket</li>
+                </ul>    
+            </div>
 
+            <hr className="header-hr" />
+        </div>
     </div>
   
 
