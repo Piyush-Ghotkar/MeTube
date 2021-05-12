@@ -1,0 +1,48 @@
+
+.main-body{
+    margin-left: 32.6vh;
+    margin-top: 5.5rem;
+    height: 50rem;
+    background-color: #f9f9f9;
+    margin-right: 0rem;
+}
+
+.contents {
+    display: inline-block;
+    margin-top: 1.5rem;
+    margin-left: 1.2rem;
+}
+
+.row{
+
+}
+
+.single-item-wd{
+    width: 19.5vw;
+}
+
+.item-render{
+    display: inline-block;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    margin-bottom: 2.5rem;
+}
+
+.thumbnail{
+    display:inline-block;
+    position: relative;
+}
+
+.details{
+    margin-top: 0.4rem;
+}
+
+.channel-img{
+    border-radius: 3rem;
+    width: 2.4vw;
+    margin-left: 0.15vw;
+}
+
+.details{
+    position: relative;
+}

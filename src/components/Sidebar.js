@@ -1,11 +1,10 @@
-import menu from '../imgs/menu.png';
 import yt_icon from '../imgs/yt_icon.png'
 import '../styles/Sidebar.css';
 import '../styles/ScrollBar.css';
 
 
 import HomeIcon from '@material-ui/icons/Home';
-import { red,grey } from '@material-ui/core/colors';
+import { grey } from '@material-ui/core/colors';
 import MenuIcon from '@material-ui/icons/Menu';
 import ExploreIcon from '@material-ui/icons/Explore';
 import SubscriptionsIcon from '@material-ui/icons/Subscriptions';
@@ -169,3 +168,7 @@ function Siderbar(){
 }
 
 export default Siderbar;
+
+
+
+// TODO: minimize sidebar feat

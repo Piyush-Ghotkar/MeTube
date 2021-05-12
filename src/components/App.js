@@ -2,6 +2,7 @@ import '../styles/App.css';
 import {Helmet} from 'react-helmet';
 import Header from './Header.js'
 import Sidebar from './Sidebar.js'
+import Main from './Main.js'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       </Helmet>
       <Sidebar />
       <Header />
+      <Main />
     
      
     </>
