@@ -7,7 +7,7 @@ import AppsIcon from '@material-ui/icons/Apps';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
-function Header(){
+function Header(props){
 return (
     <>
     <div className="header">
@@ -55,19 +55,19 @@ return (
         </div>
         </div>
  
-        <div className="header-top-margin">   {/*TODO: use react .header-top/bottom-margin */}
+        <div className={(props.nav.sidebarMin?"header-bottom-margin":"header-top-margin")}>   {/*TODO: use react .header-top/bottom-margin */}
             <hr className="header-hr" />
 
             <div className="top-nav">
                 <ul>
-                    <li className="active">All</li>
-                    <li>Live</li>
-                    <li>Music</li>
-                    <li>Technology</li>
-                    <li>Coding</li>
-                    <li>Comedies</li>
-                    <li>Trailers</li>
-                    <li>Cricket</li>
+                    <li onClick={props.setNavHeaderActive} className={(props.nav.headerbarActive==="all"?"active":"")}>All</li>
+                    <li onClick={props.setNavHeaderActive} className={(props.nav.headerbarActive==="live"?"active":"")}>Live</li>
+                    <li onClick={props.setNavHeaderActive} className={(props.nav.headerbarActive==="music"?"active":"")}>Music</li>
+                    <li onClick={props.setNavHeaderActive} className={(props.nav.headerbarActive==="technology"?"active":"")}>Technology</li>
+                    <li onClick={props.setNavHeaderActive} className={(props.nav.headerbarActive==="coding"?"active":"")}>Coding</li>
+                    <li onClick={props.setNavHeaderActive} className={(props.nav.headerbarActive==="comedies"?"active":"")}>Comedies</li>
+                    <li onClick={props.setNavHeaderActive} className={(props.nav.headerbarActive==="trailers"?"active":"")}>Trailers</li>
+                    <li onClick={props.setNavHeaderActive} className={(props.nav.headerbarActive==="cricket"?"active":"")}>Cricket</li>
                 </ul>    
             </div>
 

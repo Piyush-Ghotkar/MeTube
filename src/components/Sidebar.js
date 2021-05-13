@@ -24,31 +24,32 @@ import FeedbackIcon from '@material-ui/icons/Feedback';
 
 // const yt_red_color=#FF0000;
 
-function Siderbar(){
+
+function Siderbar(props){
     return (
         <>
         <div className="sidebar">
             <div className="sidebar-top">
-                <MenuIcon className="ham-menu" style={{ color: grey[700] }} />
+                <MenuIcon onClick={props.setNavSidebar} className="ham-menu" style={{ color: grey[700] }} />
                 {/* <img  src={menu} alt="Ham-menu"/> */}
                 <img className="site-icon" src={yt_icon} alt="Youtube Icon" />
                     <div className="site-name">MeTube</div>
             </div>
             
             <div className="content">
-                <ul className=""> {/*TODO: Add react state close-max/___ */}
-                    <li className="active">
-                        <HomeIcon className="active-icon li-icon " />
+                <ul className={(props.nav.sidebarMin?"close-max":"")}> 
+                    <li onClick={()=>{props.setSidebarActive('home')}} className={(props.nav.sidebarActive=='home'?"active":"")}>
+                        <HomeIcon className={(props.nav.sidebarActive=='home'?"active-icon ":"") +" li-icon "}  />
                          <div className="sidebar-txt">Home</div>
                     </li>
-                    <li>
-                        <ExploreIcon className="li-icon"/>
+                    <li onClick={()=>{props.setSidebarActive('explore')}} className={(props.nav.sidebarActive=='explore'?"active":"")}>
+                        <ExploreIcon className={(props.nav.sidebarActive=='explore'?"active-icon":"")+" li-icon "}/>
                             <div className="sidebar-txt">
                              Explore
                             </div>
                     </li>
-                    <li >
-                        <SubscriptionsIcon className="li-icon smaller-icon" style={{ fontSize: 20 }}/>
+                    <li onClick={()=>{props.setSidebarActive('subscriptions')}} className={(props.nav.sidebarActive=='subscriptions'?"active":"")}>
+                        <SubscriptionsIcon className={(props.nav.sidebarActive=='subscriptions'?"active-icon":"")+" li-icon smaller-icon"}  style={{ fontSize: 20 }}/>
                             <div className="sidebar-txt">
                              Subscriptions
                             </div>
@@ -56,26 +57,26 @@ function Siderbar(){
                     
                     <hr />
                     
-                    <li>
-                        <VideoLibraryIcon className="li-icon"/>
+                    <li onClick={()=>{props.setSidebarActive('library')}} className={(props.nav.sidebarActive=='library'?"active":"")}>
+                        <VideoLibraryIcon className={(props.nav.sidebarActive=='library'?"active-icon":"")+" li-icon "}/>
                             <div className="sidebar-txt">
                              Library
                             </div>
                     </li>
-                    <li>
-                        <HistoryIcon className="li-icon" style={{ fontSize: 22.5 }}/>
+                    <li onClick={()=>{props.setSidebarActive('history')}} className={(props.nav.sidebarActive=='history'?"active":"")}>
+                        <HistoryIcon className={(props.nav.sidebarActive=='history'?"active-icon":"")+" li-icon "} style={{ fontSize: 22.5 }}/>
                             <div className="sidebar-txt">
                              History
                             </div>
                     </li>
-                    <li>
-                        <WatchLaterIcon className="li-icon smaller-icon" style={{ fontSize: 20 }}/>
+                    <li onClick={()=>{props.setSidebarActive('watchLater')}} className={(props.nav.sidebarActive=='watchLater'?"active":"")}>
+                        <WatchLaterIcon className={(props.nav.sidebarActive=='watchLater'?"active-icon":"")+" li-icon smaller-icon"} style={{ fontSize: 20 }}/>
                             <div className="sidebar-txt">
                              Watch later
                             </div>
                     </li>
-                    <li>
-                        <ThumbUpAltIcon className="li-icon smaller-icon" style={{ fontSize: 20 }}/>
+                    <li onClick={()=>{props.setSidebarActive('likedVideos')}} className={(props.nav.sidebarActive=='likedVideos'?"active":"")}>
+                        <ThumbUpAltIcon className={(props.nav.sidebarActive=='likedVideos'?"active-icon":"")+" li-icon smaller-icon"} style={{ fontSize: 20 }}/>
                             <div className="sidebar-txt">
                              Liked videos
                             </div>
@@ -164,32 +165,32 @@ function Siderbar(){
 
 
             <div className="min-sidebar">
-                <ul className="close-min"> {/*TODO: Add react state close-min/___ */}
-                        <li className="active">
+                <ul className={(props.nav.sidebarMin?"":"close-min")}> 
+                        <li onClick={()=>{props.setSidebarActive('home')}} className={(props.nav.sidebarActive=='home'?"active":"")}>
                             <div className="li-content">
-                                <HomeIcon className="active-icon li-icon " style={{ fontSize: 25 }} />
+                                <HomeIcon className={(props.nav.sidebarActive=='home'?"active-icon ":"") +" li-icon "} style={{ fontSize: 25 }} />
                                 <div className="sidebar-txt">Home</div>
                             </div>
                         </li>
-                        <li>
+                        <li onClick={()=>{props.setSidebarActive('explore')}} className={(props.nav.sidebarActive=='explore'?"active":"")}>
                             <div className="li-content">
-                                <ExploreIcon className="li-icon"/>
+                                <ExploreIcon className={(props.nav.sidebarActive=='explore'?"active-icon":"")+" li-icon "}/>
                                     <div className="sidebar-txt">
                                     Explore
                                     </div>
                             </div>
                         </li>
-                        <li >
+                        <li onClick={()=>{props.setSidebarActive('subscriptions')}} className={(props.nav.sidebarActive=='subscriptions'?"active":"")} >
                             <div className="li-content">
-                                <SubscriptionsIcon className="li-icon smaller-icon" style={{ fontSize: 20 }}/>
+                                <SubscriptionsIcon className={(props.nav.sidebarActive=='subscriptions'?"active-icon":"")+" li-icon smaller-icon"} style={{ fontSize: 20 }}/>
                                     <div className="sidebar-txt">
                                     Subscriptions
                                     </div>
                             </div>
                         </li>
-                        <li>
+                        <li onClick={()=>{props.setSidebarActive('library')}} className={(props.nav.sidebarActive=='library'?"active":"")}>
                             <div className="li-content">
-                                <VideoLibraryIcon className="li-icon"/>
+                                <VideoLibraryIcon className={(props.nav.sidebarActive=='library'?"active-icon":"")+" li-icon "} />
                                 <div className="sidebar-txt">
                                 Library
                                 </div>
@@ -205,6 +206,3 @@ function Siderbar(){
 
 export default Siderbar;
 
-
-
-// TODO: minimize sidebar feat
