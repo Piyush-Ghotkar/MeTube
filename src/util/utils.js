@@ -18,7 +18,7 @@ export async function getHomeVideos(category){
       vehicles:2
     };
     var key=process.env.REACT_APP_API_KEY;
-
+    
     // url+= "?"+"part="+part+"&maxResult="+maxResults+"&q="+q+"&key="+key;  //search query
 
     url+= "?"+"part="+part+"&chart="+chart+"&maxResults="+maxResults+"&key="+key+"&videoCategoryId="+videoCategoryId[category];  //category query
