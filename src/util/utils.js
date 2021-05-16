@@ -1,4 +1,4 @@
-import {api_key,api_key2} from './config.js';
+// import {api_key,api_key2} from './config.js';
 
 export async function getHomeVideos(category){
     // api params
@@ -17,7 +17,7 @@ export async function getHomeVideos(category){
       entertainment:24,
       vehicles:2
     };
-    var key=api_key2;
+    var key=process.env.REACT_APP_API_KEY;
 
     // url+= "?"+"part="+part+"&maxResult="+maxResults+"&q="+q+"&key="+key;  //search query
 
