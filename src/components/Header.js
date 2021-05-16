@@ -63,11 +63,13 @@ return (
                     <li onClick={props.setNavHeaderActive} className={(props.nav.headerbarActive==="all"?"active":"")}>All</li>
                     <li onClick={props.setNavHeaderActive} className={(props.nav.headerbarActive==="live"?"active":"")}>Live</li>
                     <li onClick={props.setNavHeaderActive} className={(props.nav.headerbarActive==="music"?"active":"")}>Music</li>
-                    <li onClick={props.setNavHeaderActive} className={(props.nav.headerbarActive==="technology"?"active":"")}>Technology</li>
-                    <li onClick={props.setNavHeaderActive} className={(props.nav.headerbarActive==="coding"?"active":"")}>Coding</li>
+                    <li onClick={props.setNavHeaderActive} className={(props.nav.headerbarActive==="news"?"active":"")}>News</li>
+                    <li onClick={props.setNavHeaderActive} className={(props.nav.headerbarActive==="sports"?"active":"")}>Sports</li>
                     <li onClick={props.setNavHeaderActive} className={(props.nav.headerbarActive==="comedies"?"active":"")}>Comedies</li>
-                    <li onClick={props.setNavHeaderActive} className={(props.nav.headerbarActive==="trailers"?"active":"")}>Trailers</li>
-                    <li onClick={props.setNavHeaderActive} className={(props.nav.headerbarActive==="cricket"?"active":"")}>Cricket</li>
+                    <li onClick={props.setNavHeaderActive} className={(props.nav.headerbarActive==="vlogs"?"active":"")}>Vlogs</li>
+                    <li onClick={props.setNavHeaderActive} className={(props.nav.headerbarActive==="entertainment"?"active":"")}>Entertainment</li>
+                    <li onClick={props.setNavHeaderActive} className={(props.nav.headerbarActive==="vehicles"?"active":"")}>Vehicles</li>
+
                 </ul>    
             </div>
 

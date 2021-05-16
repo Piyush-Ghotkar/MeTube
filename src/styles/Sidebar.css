@@ -27,6 +27,10 @@
   width: 27.4vh;
   /* padding: 0.5vh 0.5vh; */
   position: fixed;
+  background-color: #ffffff;
+}
+
+.sidebar-top-opacity{
   background-color: #ffffff63;
 }
 
