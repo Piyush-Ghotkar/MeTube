@@ -22,4 +22,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+<<<<<<< HEAD
 .env.apiKey
+=======
+config.js
+.env.apiKey
+>>>>>>> de57451ed96b222df3e6c46e467a9614782dcd51
