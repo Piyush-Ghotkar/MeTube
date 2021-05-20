@@ -32,8 +32,8 @@ function Siderbar(props){
             <div className={"sidebar-top "+(props.nav.sidebarMin?"sidebar-top-opacity":"") }>
                 <MenuIcon onClick={props.setNavSidebar} className="ham-menu" style={{ color: grey[700] }} />
                 {/* <img  src={menu} alt="Ham-menu"/> */}
-                <img className="site-icon" src={yt_icon} alt="YouTube Icon" />
-                    <div className="site-name">MeTube</div>
+                <img className="site-icon" src={yt_icon} alt="YouTube Icon" onClick={reloadPage}/>
+                 <div className="site-name" onClick={reloadPage}>MeTube</div>
             </div>
             
             <div className="content">
@@ -202,6 +202,11 @@ function Siderbar(props){
             </div>
         </>
     );
+
+
+    function reloadPage(){
+        window.location.reload();
+    }
 }
 
 export default Siderbar;

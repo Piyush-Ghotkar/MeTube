@@ -61,7 +61,6 @@ return (
             <div className="top-nav">
                 <ul>
                     <li onClick={props.setNavHeaderActive} className={(props.nav.headerbarActive==="all"?"active":"")}>All</li>
-                    <li onClick={props.setNavHeaderActive} className={(props.nav.headerbarActive==="live"?"active":"")}>Live</li>
                     <li onClick={props.setNavHeaderActive} className={(props.nav.headerbarActive==="music"?"active":"")}>Music</li>
                     <li onClick={props.setNavHeaderActive} className={(props.nav.headerbarActive==="news"?"active":"")}>News</li>
                     <li onClick={props.setNavHeaderActive} className={(props.nav.headerbarActive==="sports"?"active":"")}>Sports</li>
