@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;500&display=swap');
+
+
+.watch-body{
+    margin-left: 0rem;
+    margin-top: 2rem;
+    background-color: #f9f9f9;
+    margin-right: 0rem;
+}
+
+.watch-contents{
+    max-width: 86.5vw;
+    margin: auto;
+}
+
+.playerColumn{
+    width: 67%;
+    display: inline-block;
+    margin-top: 1.6rem;
+    
+}
+
+.videoTitle{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1.12rem;
+    margin-top: 0.4rem;
+    line-height: 2.6rem;
+}
+
+.video-statDetails{
+    font-family: 'Roboto', sans-serif;
+
+}
+.player-views{
+    color: #606060;
+    font-size: 0.91rem;
+    margin-top: 0.1rem;
+    margin-bottom: 1.2rem;
+}
+
+.player-icons{
+    float: right;
+    display: inline;
+}
+
+.player-stat{
+    display: inline;
+    vertical-align: top;
+    margin: 0rem 0.55rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.player-icon{
+    color: #8a8787;
+    display: inline;
+    vertical-align: middle;
+    margin-right: 0.4rem;
+    z-index: 2;
+   
+}
+
+.player-icon-txt{
+    display: inline;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    vertical-align: middle;
+}
+
+.stat-hover-txt{
+    display: none;
+    position: absolute;
+    background-color: #707070;
+    color: white;
+    padding: 0.6rem 0.6rem;
+    font-size: 0.75rem;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    white-space:nowrap;
+    left: 0px;
+    transform: translateY(-140%);
+}
+
+.player-stat:hover .stat-hover-txt{
+    display: inherit !important;
+}
+
+.shareIcon{
+    transform: scaleX(-1);
+}
+
+.last-stat{
+    margin-right: 0rem;
+    margin-left: 0.4rem;
+}
+
+.lastIcon{
+    margin-right: 0rem;
+    margin-left: 0.4rem;
+}
+
+.channel-description{
+    margin-top: 1rem;
+}
+
+.channelThumb{
+    border-radius: 3rem;
+    width: 3.1vw;
+    cursor: pointer;
+}
+
+.row1{
+    width: 100%;
+    
+}
+
+.name-subs{
+    margin-left: 0.9rem;
+    display: inline-block;
+    vertical-align: super;
+}
+
+.channelName{
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.89rem;
+    display: block;
+    font-weight: 500;
+    vertical-align: top;
+    cursor: pointer;
+    position: relative;
+}
+
+.channelName-hover-txt{
+    display: none;
+    position: absolute;
+    background-color: #707070;
+    color: white;
+    padding: 0.6rem 0.6rem;
+    font-size: 0.75rem;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    white-space:nowrap;
+    left: 0px;
+    transform: translateY(-190%);
+}
+
+.channelName:hover .channelName-hover-txt{
+    display:block;
+}
+
+.channelSubs{
+    display: inline;
+    vertical-align: top;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.77rem;
+    color: #606060;
+    margin-top: 0.8rem;
+
+}
+
+.subscribeButton{
+    float: right;
+    margin-top: 0.35rem;
+    font-family: 'Poppins', sans-serif;
+    background-color: #c00;
+    color: white;
+    border-radius: 2px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.row2{
+    margin-top: 0.75rem;   
+    margin-left: 3.9rem;
+    max-width: 615px;
+}
+
+.videoDescription{
+    white-space: pre-line;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.25rem;
+}
+
+.lessDescription{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.show-txt{
+    margin-top: 1.7rem;
+    /* display: block; */
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: #636161;
+    margin-bottom: 1rem;
+   cursor: pointer;
+ } 
+ 
+ .show-txt-reducedMargin{
+    margin-top:0.7rem;
+ }
+  
+ .commentsSection{
+    margin-top: 1.7rem;
+    font-family: 'Roboto', sans-serif;
+ }
+
+ .comments{
+    margin-top: 2rem;
+ }
+
+ .comment{
+     width: 100%;
+    margin-bottom: 1.4rem;
+ }
+
+ .comment-profileImg{
+    border-radius: 3rem;
+    width: 2.6vw;
+    cursor: pointer;
+    vertical-align: top;
+ }
+
+ .comment-details{
+    margin-left: 0.9rem;
+    display: inline-block;
+    vertical-align: super;
+    width: 90%;
+ }
+
+ .comment-profileName{
+    font-size: 0.8rem;
+    display: inline;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+ }
+
+ 
+.comment-profileName-hover-txt{
+    display: none;
+    position: absolute;
+    background-color: #707070;
+    color: white;
+    padding: 0.6rem 0.6rem;
+    font-size: 0.75rem;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    white-space:nowrap;
+    left: 0px;
+    transform: translateY(-190%);
+}
+
+.comment-profileName:hover .comment-profileName-hover-txt{
+    display:block;
+}
+
+ .comment-publishedAt{
+    display: inline;
+    font-family: 'Roboto', sans-serif;
+    color: #777575;
+    font-size: 0.75rem;
+    margin-left: 0.3rem;
+ }
+
+ .comment-displayTxt{
+    white-space: pre-line;
+    font-size: 0.89rem;
+    line-height: 1.25rem;
+    margin-top: 0.5rem;
+ }
+
+ .comment-displayTxt a{
+    color: #065fd4;
+ }
+
+ .comment-response{
+     margin-top: 0.6rem;
+ }
+
+ .comment-icons{
+    color: #8f8e8e;
+    display: inline;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+    cursor: pointer;
+ }
+
+.comment-likeTxt{
+    display: inline;
+    font-family: 'Roboto', sans-serif;
+    vertical-align: middle;
+    color: #777575;
+    font-size: 0.8rem;
+    margin-right: 0.8rem;
+ }
+
+ .comment-reply{
+    margin-left: 1rem;
+    font-weight: 500;
+    color: #777575;
+    display: inline;
+    vertical-align: middle;
+    font-size: 0.9rem;
+    cursor: pointer;
+ }
+
+ .noComments{
+    text-align: center;
+    margin-bottom: 4rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+ }
+
+ .noComments a{
+    color: #065fd4;
+ }
+
+ .relatedVideosColumn{
+    width: 30%;
+    display: inline-block;
+    margin-top: 1.6rem;
+    margin-left: 0rem;
+    vertical-align: top;
+    position: absolute;
+}
+
+.relatedVideo-item{
+    width: 95%;
+    float: right;
+    margin-bottom: 0.4rem;
+}
+
+/* .relatedVideo-thumbnail{
+    display: inline;
+} */
+
+.relatedVideo-thumbnail-img{
+    width: 10.7rem;
+    height: 6rem;
+    cursor: pointer;
+}
+
+.relatedVideo-details{
+    display: inline-block;
+    vertical-align: super;
+    margin-left: 0.45rem;
+    position: absolute;
+    cursor: pointer;
+}
+
+.relatedVideo-details-title{
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    
+    display: inline-block;
+    vertical-align: top;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.relatedVideo-channelName{
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.77rem;
+    color: #606060;
+    margin-top: 0.4rem;
+}
+
+.relatedVideo-publishedAt{
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.77rem;
+    color: #606060;
+    margin-top: 0.2rem;
+}

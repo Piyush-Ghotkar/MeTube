@@ -21,6 +21,7 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import FlagIcon from '@material-ui/icons/Flag';
 import HelpIcon from '@material-ui/icons/Help';
 import FeedbackIcon from '@material-ui/icons/Feedback';
+import {Link} from "react-router-dom";
 
 // const yt_red_color=#FF0000;
 
@@ -28,16 +29,18 @@ import FeedbackIcon from '@material-ui/icons/Feedback';
 function Siderbar(props){
     return (
         <>
-        <div className="sidebar">
+        <div className={(props.nav.sidebarMin?"sidebarSmaller":"sidebar")}>
             <div className={"sidebar-top "+(props.nav.sidebarMin?"sidebar-top-opacity":"") }>
                 <MenuIcon onClick={props.setNavSidebar} className="ham-menu" style={{ color: grey[700] }} />
                 {/* <img  src={menu} alt="Ham-menu"/> */}
-                <img className="site-icon" src={yt_icon} alt="YouTube Icon" onClick={reloadPage}/>
-                 <div className="site-name" onClick={reloadPage}>MeTube</div>
+                <Link to="/" >
+                    <img className="site-icon" src={yt_icon} alt="YouTube Icon" onClick={()=>{props.setSidebarActive('home');props.setNavHeaderActive('all');props.setIsHome(true)}}/>
+                    <div className="site-name" onClick={()=>{props.setSidebarActive('home');props.setNavHeaderActive('all');props.setIsHome(true)}}>MeTube</div>
+                </Link> 
             </div>
             
             <div className="content">
-                <ul className={(props.nav.sidebarMin?"close-max":"")}> 
+                <ul className={(props.nav.sidebarMin?"close-max":"")+(props.nav.isHome?"":" sidebar-slide")}> 
                     <li onClick={()=>{props.setSidebarActive('home')}} className={(props.nav.sidebarActive==='home'?"active":"")}>
                         <HomeIcon className={(props.nav.sidebarActive==='home'?"active-icon ":"") +" li-icon "}  />
                          <div className="sidebar-txt">Home</div>
@@ -165,7 +168,7 @@ function Siderbar(props){
 
 
             <div className="min-sidebar">
-                <ul className={(props.nav.sidebarMin?"":"close-min")}> 
+                <ul className={(props.nav.sidebarMin?"":"close-min")+(props.nav.isHome?"":" no-sidebar")}> 
                         <li onClick={()=>{props.setSidebarActive('home')}} className={(props.nav.sidebarActive==='home'?"active":"")}>
                             <div className="li-content">
                                 <HomeIcon className={(props.nav.sidebarActive==='home'?"active-icon ":"") +" li-icon "} style={{ fontSize: 25 }} />

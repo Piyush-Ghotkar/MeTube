@@ -6,6 +6,7 @@ import { concatVideosChannels } from '../util/utils.js';
 import { formatViews } from '../util/utils.js';
 import { formatDate } from '../util/utils.js';
 import {useState,useEffect,useRef} from 'react';
+import {Link} from "react-router-dom";
 
 
 function Main(props){
@@ -18,7 +19,10 @@ function Main(props){
     const promiseChannel=useRef();
 
     // var promiseChannel;
-    
+    useEffect(()=>{
+        props.setIsHome(true);
+    },[])
+
     useEffect(()=>{
         console.log("counting calling 1st fetch");
         var videos= getHomeVideos(props.nav.headerbarActive);
@@ -86,14 +90,14 @@ function Main(props){
 
     return (
     <>
-    d
+    .
         <div className={(props.nav.sidebarMin?"main-body-minSidebar":"main-body")}> 
             <div className="contents">
                 <div className="row">
                     {  
                         videosObj && 
                         videosObj.items.map((item)=> (
-                                <div className="item-render single-item-wd" key={item.id}>
+                                <Link to={`/watch/${item.id}`}  key={item.id}><div className="item-render single-item-wd">
                                     <div className="thumbnail">
                                         <img className="single-item-wd static-thumb" alt="thumbnail" src={item.snippet.thumbnails.medium.url} />
                                             {console.log("rendering html")}
@@ -101,7 +105,7 @@ function Main(props){
                                     </div>
                                     <div className="details">
                                         <img className="channel-img" alt="channel-thumbnail" src={item.snippet.channelThumbnail} />
-                                        {/* {console.log(item.snippet.channelThumbnail)} */}
+                                        {/* {console.log(item.id)} */}
                                         <div className="details-txt">
                                             <div className="details-title">
                                                 {item.snippet.title}
@@ -120,11 +124,9 @@ function Main(props){
                                         </div>
                                     </div>
                                 </div>
+                                </Link>
                             ))
-                    } {
-                    // reRender.current=false
                     }
-
                 </div>
             </div>
         </div>

@@ -1,12 +1,12 @@
-import { Shuffle } from "@material-ui/icons";
-
 var key=process.env.REACT_APP_API_KEY2;
 
 export async function getHomeVideos(category){
     console.log("inside get videos");
+    var url;
+    var part;
     if(category!=="all"){
-        var url="https://www.googleapis.com/youtube/v3/videos";
-        var part="snippet,statistics";
+        url="https://www.googleapis.com/youtube/v3/videos";
+        part="snippet,statistics";
         var chart="mostPopular"
         var maxResults=16;
         var regionCode="IN";
@@ -24,10 +24,10 @@ export async function getHomeVideos(category){
         
         // url+= "?"+"part="+part+"&maxResult="+maxResults+"&q="+q+"&key="+key;  //search query
     
-        url+= "?"+"part="+part+"&chart="+chart+"&maxResults="+maxResults+"&key="+key+"&videoCategoryId="+videoCategoryId[category];  //category query //+"&regionCode="+regionCode    
+        url+= "?"+"part="+part+"&chart="+chart+"&maxResults="+maxResults+"&key="+key+"&videoCategoryId="+videoCategoryId[category]+"&regionCode="+regionCode;  //category query //+"&regionCode="+regionCode    
     }else{
-        var url="https://www.googleapis.com/youtube/v3/videos";
-        var part="snippet,statistics";
+        url="https://www.googleapis.com/youtube/v3/videos";
+        part="snippet,statistics";
         var videosId=[
             "SmpxuqhHfB8",   //sanmay's given ids
             "L7c4wS7T_T8",
@@ -95,7 +95,7 @@ export async function getChannelsThumbnails(videosObj){
     )   
 
     var url="https://www.googleapis.com/youtube/v3/channels";
-    var part="snippet";
+    var part="snippet,statistics";
     var idString="";
     for(var i=0; i<channelsId.length; i++){
         idString+=channelsId[i]+",";
@@ -115,8 +115,68 @@ export async function getChannelsThumbnails(videosObj){
     return channelsObj;
 }
 
+export async function getVideoById(id){
+    var url="https://www.googleapis.com/youtube/v3/videos";
+    var part="snippet,statistics";
+
+    url+="?part="+part+"&id="+id+"&key="+key;
+
+    var video=await fetch(url)
+                    .then(response=>response.json())
+                    .then(data=>{return data})
+                    .catch((err)=>{
+                        console.log(err)
+                    })
+    return video;
+}
+
+export async function getCommentsById(id){
+    var url="https://www.googleapis.com/youtube/v3/commentThreads";
+    var part="snippet";
+    var maxResults=10;
+    var order="relevance";
+    url+="?part="+part+"&videoId="+id+"&maxResults="+maxResults+"&order="+order+"&key="+key;
+    
+    var comments=await fetch(url)
+                    .then(response=>response.json())
+                    .then(data=>{return data})
+                    .catch((err)=>{
+                        console.log(err)
+                    })
+
+    return comments;
+}
+
+export async function getRelatedVideosByID(id){
+    var url="https://www.googleapis.com/youtube/v3/search";
+    var part="snippet";
+    var maxResults=20;
+    var type="video";
+    url+="?part="+part+"&relatedToVideoId="+id+"&maxResults="+maxResults+"&type="+type+"&key="+key;
+    var filterRelatedVideo=[];
+    var relatedVideos=await fetch(url)
+                    .then(response=>response.json())
+                    .then(data=>{
+                        
+                        for(var i=0;i<data.items.length;i++){
+                            if("snippet" in data.items[i]){
+                                filterRelatedVideo.push(data.items[i]);
+                            }
+                        }
+
+                        return data})
+                    .catch((err)=>{
+                        console.log(err)
+                    })
+    
+    
+    
+    return filterRelatedVideo;
+}
+
 
 export function formatViews(views){
+    views=  views.toString();
   if(views.length<=3){
     return views;
   }else if(views.length<=6){
@@ -178,7 +238,7 @@ export function concatVideosChannels(videos,channels){
         videos.items.map((item)=>{
             for(var i=0;i<channels.items.length;i++){
                 if(item.snippet.channelId===channels.items[i].id){
-                    item.snippet.channelThumbnail=channels.items[i].snippet.thumbnails.medium.url;
+                    item.snippet.channelThumbnail=channels.items[i].snippet.thumbnails.default.url;
                     break;
                 }
             }
@@ -188,6 +248,43 @@ export function concatVideosChannels(videos,channels){
     return videos;
 }
 
+export function concatVideosChannelsCommentsRelatedVideos(videos,channels,comments,relatedVideos){
+    console.log("concat called");
+
+    videos.items.map((item)=>{
+        for(var i=0;i<channels.items.length;i++){
+            if(item.snippet.channelId===channels.items[i].id){
+                item.snippet.channelThumbnail=channels.items[i].snippet.thumbnails.default.url;
+                item.statistics.subscriberCount=channels.items[i].statistics.subscriberCount;
+                item.commentThread=comments.items;
+                item.relatedVideos=relatedVideos; 
+                break;
+            }
+        }
+    })
+    
+    return videos;
+}
+
 function ShuffleVideoId(array){
     array.sort(() => Math.random() - 0.5);
+}
+
+export function PlayerViewsFormatter(views){
+    var digitLength=views.length;
+    var numberOfComma=parseInt(digitLength/3);
+    if(digitLength%3==0){
+        numberOfComma--;
+    }
+    for(var i=1;i<=numberOfComma;i++){
+        views=views.slice(0, digitLength-(3*i)) + "," + views.slice(digitLength-(3*i));
+    } 
+    return views;  
+}
+
+export function PlayerDateFormatter(publishedAt){
+    var date= new Date(publishedAt);
+    var Months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var formattedDate=Months[date.getMonth()]+" "+date.getDate()+", "+date.getFullYear()
+    return formattedDate;
 }

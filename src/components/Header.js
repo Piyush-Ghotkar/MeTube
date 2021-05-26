@@ -55,7 +55,7 @@ return (
         </div>
         </div>
  
-        <div className={(props.nav.sidebarMin?"header-bottom-margin":"header-top-margin")}>   {/*TODO: use react .header-top/bottom-margin */}
+        <div className={(props.nav.sidebarMin?"header-bottom-margin":"header-top-margin")+(props.nav.isHome?"":" no-top-nav")}>
             <hr className="header-hr" />
 
             <div className="top-nav">
