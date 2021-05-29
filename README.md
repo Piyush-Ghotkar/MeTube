@@ -1,6 +1,6 @@
 # MeTube 
 
-Metube is an YouTube clone developed in react.js
+Metube is a YouTube clone developed in react.js
 
 #### Tech Stack:
     1. react.js
@@ -20,5 +20,6 @@ Metube is an YouTube clone developed in react.js
     2. Run command "npm install"
     3. Finally, run command "npm start" 
 
+#### Check out MeTube at https://metube00.netlify.app/
 
 Note: MeTube is not responsive yet
