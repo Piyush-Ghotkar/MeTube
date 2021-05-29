@@ -16,6 +16,7 @@ import VideoPlayer from './VideoPlayer.js'
 function App() {
 
   const [nav,setNav]=useState({"sidebarMin":false, "sidebarActive":'home', "headerbarActive":'all', "isHome":true});
+  const [headTitle, setHeadTitle] = useState("MeTube00");
 
   function setNavSidebar(){
     setNav(prevState => ({
@@ -54,12 +55,18 @@ function App() {
     }));
   }
 
+  function setHeadTitleAsVidoeTitle(title){
+    if(title!=="MeTube"){
+      title+=" - MeTube";
+    }
+    setHeadTitle(title);
+  }
   
 
   return (
     <>
       <Helmet>
-        <title>MeTube</title>
+        <title>{headTitle}</title>
       </Helmet>
       <Sidebar nav={nav} setNavSidebar={setNavSidebar} setSidebarActive={setSidebarActive} setIsHome={setIsHome} setNavHeaderActive={setNavHeaderActive} />
       {
@@ -70,9 +77,9 @@ function App() {
       <Header nav={nav} setNavHeaderActive={setNavHeaderActive}/>
 
       <Routes>
-        <Route  exact path='/'  element={<Main nav={nav} setIsHome={setIsHome} />} />
-        <Route  path="/feed/explore"  element={<Explore nav={nav} setSidebarActive={setSidebarActive} setIsHome={setIsHome} />} />
-        <Route path="/watch/:videoId" element={<VideoPlayer nav={nav} setNavSidebar={setNavSidebar} setSidebarActive={setSidebarActive} setIsHome={setIsHome} />} />
+        <Route  exact path='/'  element={<Main nav={nav} setIsHome={setIsHome} setHeadTitleAsVidoeTitle={setHeadTitleAsVidoeTitle} />} />
+        <Route  path="/feed/explore"  element={<Explore nav={nav} setSidebarActive={setSidebarActive} setIsHome={setIsHome} setHeadTitleAsVidoeTitle={setHeadTitleAsVidoeTitle} />} />
+        <Route path="/watch/:videoId" element={<VideoPlayer nav={nav} setNavSidebar={setNavSidebar} setSidebarActive={setSidebarActive} setIsHome={setIsHome} setHeadTitleAsVidoeTitle={setHeadTitleAsVidoeTitle} />} />
       </Routes>
     </>
   );

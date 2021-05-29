@@ -26,6 +26,8 @@ function Main(props){
     },[])
 
     useEffect(()=>{
+        window.scrollTo(0, 0);
+        props.setHeadTitleAsVidoeTitle("MeTube");
         console.log("counting calling 1st fetch");
         var videos= getHomeVideos(props.nav.headerbarActive);
         promiseVideos.current=videos;

@@ -34,6 +34,7 @@ function VideoPlayer(props){
         var videoPromise=getVideoById(videoId);
         videoPromise
         .then(async videos=> {
+            props.setHeadTitleAsVidoeTitle(videos.items[0].snippet.localized.title);
             var channels= await getChannelsThumbnails(videos);
             var comments=await getCommentsById(videos.items[0].id)
             var relatedVideos= await getRelatedVideosByID(videos.items[0].id)
