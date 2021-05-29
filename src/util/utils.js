@@ -198,6 +198,24 @@ export async function getTrendingVideos(){
     return videos;
 }
 
+export async function getSearchList(q){
+    var url="https://www.googleapis.com/youtube/v3/search";
+    var part="snippet";
+    var maxResults=20;
+    var type="video";
+    url+="?part="+part+"&q="+q+"&maxResults="+maxResults+"&type="+type+"&key="+key;
+    var videos;
+    videos=await fetch(url)
+                    .then(response => response.json())
+                    .then(data=> {return data})
+                    .catch((err) => {
+                        console.log(err);
+                        return err;
+                      })
+
+    return videos;
+}
+
 
 export function formatViews(views){
     try{

@@ -11,6 +11,8 @@ import Sidebar from './Sidebar.js'
 import Main from './Main.js'
 import Explore from './Explore.js'
 import VideoPlayer from './VideoPlayer.js'
+import Search from './Search.js'
+
 
 
 function App() {
@@ -80,6 +82,8 @@ function App() {
         <Route  exact path='/'  element={<Main nav={nav} setIsHome={setIsHome} setHeadTitleAsVidoeTitle={setHeadTitleAsVidoeTitle} />} />
         <Route  path="/feed/explore"  element={<Explore nav={nav} setSidebarActive={setSidebarActive} setIsHome={setIsHome} setHeadTitleAsVidoeTitle={setHeadTitleAsVidoeTitle} />} />
         <Route path="/watch/:videoId" element={<VideoPlayer nav={nav} setNavSidebar={setNavSidebar} setSidebarActive={setSidebarActive} setIsHome={setIsHome} setHeadTitleAsVidoeTitle={setHeadTitleAsVidoeTitle} />} />
+        <Route path="/result/search_query/:query" element={<Search nav={nav} setNavSidebar={setNavSidebar} setSidebarActive={setSidebarActive} setIsHome={setIsHome} setHeadTitleAsVidoeTitle={setHeadTitleAsVidoeTitle} />} />
+
       </Routes>
     </>
   );

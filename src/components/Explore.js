@@ -16,6 +16,8 @@ function Explore(props){
         props.setSidebarActive('explore');
         window.scrollTo(0, 0);
         props.setHeadTitleAsVidoeTitle("Explore");
+        props.setIsHome(true);
+
 
         var videos= getTrendingVideos(props.nav.headerbarActive);
 
