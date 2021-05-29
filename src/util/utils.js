@@ -1,7 +1,6 @@
 var key=process.env.REACT_APP_API_KEY2;
 
 export async function getHomeVideos(category){
-    console.log("inside get videos");
     var url;
     var part;
     if(category!=="all"){
@@ -92,7 +91,6 @@ export async function getHomeVideos(category){
 
 export async function getChannelsThumbnails(videosObj){
     var channelsId=[];
-    console.log("inside get Channels thumb");
     videosObj.items.map( (item)=> 
         channelsId.push(item.snippet.channelId)
     )   
@@ -103,7 +101,6 @@ export async function getChannelsThumbnails(videosObj){
     for(var i=0; i<channelsId.length; i++){
         idString+=channelsId[i]+",";
     }
-    // console.log(idString);
     url+="?"+"part="+part+"&key="+key+"&id="+idString;
     
     var channelsObj;
@@ -280,8 +277,6 @@ export function formatDate(publishedAt){
 }
 
 export function concatVideosChannels(videos,channels){
-    console.log("concat called");
-    
         videos.items.map((item)=>{
             for(var i=0;i<channels.items.length;i++){
                 if(item.snippet.channelId===channels.items[i].id){
@@ -296,8 +291,6 @@ export function concatVideosChannels(videos,channels){
 }
 
 export function concatVideosChannelsCommentsRelatedVideos(videos,channels,comments,relatedVideos){
-    console.log("concat called");
-
     videos.items.map((item)=>{
         for(var i=0;i<channels.items.length;i++){
             if(item.snippet.channelId===channels.items[i].id){

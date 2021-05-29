@@ -28,7 +28,6 @@ function Main(props){
     useEffect(()=>{
         window.scrollTo(0, 0);
         props.setHeadTitleAsVidoeTitle("MeTube");
-        console.log("counting calling 1st fetch");
         var videos= getHomeVideos(props.nav.headerbarActive);
         promiseVideos.current=videos;
 
@@ -45,52 +44,6 @@ function Main(props){
         
     },[props.nav.headerbarActive]);
         
-    // useEffect(()=>{
-    //     console.log("called 1st hookkkk");
-    //     promiseVideos.current
-    //     .then(async videos=> {
-    //         var channels= await getChannelsThumbnails(videos);
-    //         promiseChannel.current=channels;
-    
-    //         var videosAndChannelThumbnail=concatVideosChannels(videos,channels);
-    //         setVideosObj(videosAndChannelThumbnail);
-    //         reRender.current=true;
-    //     });
-    // },[promiseVideos.current]);
-
-    // useEffect(()=>{
-    //     console.log("ouside of 2nd hook");
-    //     console.log(promiseVideos.current);
-    //     console.log(promiseChannel.current);
-    //     if(promiseVideos.current && promiseChannel){
-    //         console.log("called 2nd hookkkk");
-            
-    //     }
-    // },[promiseChannel]);
- 
-    // if(promiseVideos){
-        
-    // }
-
-    // if(promiseChannel){
-    //     console.log("insdie channel promise");
-        
-    // }
-
-    // if(promiseVideos){
-    
-    //         var channels=  getChannelsThumbnails(promiseVideos) 
-    //         setPromiseChannel(channels);
-    //         // setVideosObj(videos.items)
-        
-    // }
-
-    // if(promiseChannel){
-    //     console.log("from main b4 concat");
-    //     promiseVideos.then(vid=>console.log(vid));
-    //     var videosAndChannelThumbnail=concatVideosChannels(promiseVideos,promiseChannel);
-    //     setVideosObj(videosAndChannelThumbnail.items);
-    // }
 
     return (
     <>

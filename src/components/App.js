@@ -18,7 +18,7 @@ import Search from './Search.js'
 function App() {
 
   const [nav,setNav]=useState({"sidebarMin":false, "sidebarActive":'home', "headerbarActive":'all', "isHome":true});
-  const [headTitle, setHeadTitle] = useState("MeTube00");
+  const [headTitle, setHeadTitle] = useState("MeTube");
 
   function setNavSidebar(){
     setNav(prevState => ({

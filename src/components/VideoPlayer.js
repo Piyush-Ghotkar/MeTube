@@ -122,7 +122,6 @@ function VideoPlayer(props){
                                         </div>
                                         <div className="row2">
                                             <div className={"videoDescription "+(showMoreDescription?"lessDescription":"")}>
-                                                {console.log(item)}
                                                 {item.snippet.localized.description}
                                             </div>
                                             <div className={"show-txt"+(showMoreDescription?"":" show-txt-reducedMargin")} onClick={toggleShow}>SHOW {(showMoreDescription?"MORE":"LESS")}</div>
@@ -134,7 +133,6 @@ function VideoPlayer(props){
                                         <div className="commentsCount">
                                             {PlayerViewsFormatter(item.statistics.commentCount)} Comments
                                         </div>
-                                        {/* {console.log(item)} */}
                                         <div className="comments">
                                             {(item.commentThread?
                                             item.commentThread.map((comment)=>(

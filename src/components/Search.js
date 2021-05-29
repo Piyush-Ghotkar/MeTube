@@ -28,6 +28,7 @@ function Search(props){
         videos
         .then(async videos=> {
             var channels= await getChannelsThumbnails(videos);
+            // TODO: get video view and duration from another request
             var videosAndChannelThumbnail=concatVideosChannels(videos,channels);
             setVideosObj(videosAndChannelThumbnail);
         });
