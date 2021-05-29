@@ -41,16 +41,20 @@ function Siderbar(props){
             
             <div className="content">
                 <ul className={(props.nav.sidebarMin?"close-max":"")+(props.nav.isHome?"":" sidebar-slide")}> 
-                    <li onClick={()=>{props.setSidebarActive('home')}} className={(props.nav.sidebarActive==='home'?"active":"")}>
-                        <HomeIcon className={(props.nav.sidebarActive==='home'?"active-icon ":"") +" li-icon "}  />
-                         <div className="sidebar-txt">Home</div>
-                    </li>
-                    <li onClick={()=>{props.setSidebarActive('explore')}} className={(props.nav.sidebarActive==='explore'?"active":"")}>
-                        <ExploreIcon className={(props.nav.sidebarActive==='explore'?"active-icon":"")+" li-icon "}/>
-                            <div className="sidebar-txt">
-                             Explore
-                            </div>
-                    </li>
+                    <Link to="/" >
+                        <li onClick={()=>{props.setSidebarActive('home')}} className={(props.nav.sidebarActive==='home'?"active":"")}>
+                            <HomeIcon className={(props.nav.sidebarActive==='home'?"active-icon ":"") +" li-icon "}  />
+                            <div className="sidebar-txt">Home</div>
+                        </li>
+                    </Link>
+                    <Link to="/feed/explore">
+                        <li onClick={()=>{props.setSidebarActive('explore')}} className={(props.nav.sidebarActive==='explore'?"active":"")}>
+                            <ExploreIcon className={(props.nav.sidebarActive==='explore'?"active-icon":"")+" li-icon "}/>
+                                <div className="sidebar-txt">
+                                Explore
+                                </div>
+                        </li>
+                    </Link>
                     <li onClick={()=>{props.setSidebarActive('subscriptions')}} className={(props.nav.sidebarActive==='subscriptions'?"active":"")}>
                         <SubscriptionsIcon className={(props.nav.sidebarActive==='subscriptions'?"active-icon":"")+" li-icon smaller-icon"}  style={{ fontSize: 20 }}/>
                             <div className="sidebar-txt">
@@ -169,12 +173,15 @@ function Siderbar(props){
 
             <div className="min-sidebar">
                 <ul className={(props.nav.sidebarMin?"":"close-min")+(props.nav.isHome?"":" no-sidebar")}> 
+                    <Link to="/" >
                         <li onClick={()=>{props.setSidebarActive('home')}} className={(props.nav.sidebarActive==='home'?"active":"")}>
                             <div className="li-content">
                                 <HomeIcon className={(props.nav.sidebarActive==='home'?"active-icon ":"") +" li-icon "} style={{ fontSize: 25 }} />
                                 <div className="sidebar-txt">Home</div>
                             </div>
                         </li>
+                    </Link>
+                    <Link to="/feed/explore">
                         <li onClick={()=>{props.setSidebarActive('explore')}} className={(props.nav.sidebarActive==='explore'?"active":"")}>
                             <div className="li-content">
                                 <ExploreIcon className={(props.nav.sidebarActive==='explore'?"active-icon":"")+" li-icon "}/>
@@ -183,6 +190,7 @@ function Siderbar(props){
                                     </div>
                             </div>
                         </li>
+                    </Link>
                         <li onClick={()=>{props.setSidebarActive('subscriptions')}} className={(props.nav.sidebarActive==='subscriptions'?"active":"")} >
                             <div className="li-content">
                                 <SubscriptionsIcon className={(props.nav.sidebarActive==='subscriptions'?"active-icon":"")+" li-icon smaller-icon"} style={{ fontSize: 20 }}/>

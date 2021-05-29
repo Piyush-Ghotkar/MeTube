@@ -6,8 +6,8 @@ export async function getHomeVideos(category){
     var part;
     if(category!=="all"){
         url="https://www.googleapis.com/youtube/v3/videos";
-        part="snippet,statistics";
-        var chart="mostPopular"
+        part="snippet,statistics,contentDetails";
+        var chart="mostPopular";
         var maxResults=16;
         var regionCode="IN";
         var videoCategoryId={
@@ -27,7 +27,7 @@ export async function getHomeVideos(category){
         url+= "?"+"part="+part+"&chart="+chart+"&maxResults="+maxResults+"&key="+key+"&videoCategoryId="+videoCategoryId[category]+"&regionCode="+regionCode;  //category query //+"&regionCode="+regionCode    
     }else{
         url="https://www.googleapis.com/youtube/v3/videos";
-        part="snippet,statistics";
+        part="snippet,statistics,contentDetails";
         var videosId=[
             "SmpxuqhHfB8",   //sanmay's given ids
             "L7c4wS7T_T8",
@@ -174,9 +174,35 @@ export async function getRelatedVideosByID(id){
     return filterRelatedVideo;
 }
 
+export async function getTrendingVideos(){
+    var url="https://www.googleapis.com/youtube/v3/videos";
+    var part="snippet,statistics,contentDetails";
+    var chart="mostPopular";
+    var maxResults=30;
+    var regionCode="IN";
+
+    url+= "?"+"part="+part+"&chart="+chart+"&maxResults="+maxResults+"&key="+key+"&regionCode="+regionCode;  //category query //+"&regionCode="+regionCode    
+    var videos;
+    
+    videos=await fetch(url)
+                    .then(response => response.json())
+                    .then(data=> {return data})
+                    .catch((err) => {
+                        console.log(err);
+                        return err;
+                      })
+
+    return videos;
+}
+
 
 export function formatViews(views){
-    views=  views.toString();
+    try{
+        views=  views.toString();
+    }catch(err){
+        views="";
+    }
+
   if(views.length<=3){
     return views;
   }else if(views.length<=6){
@@ -195,7 +221,7 @@ export function formatViews(views){
       }else{
           return views.slice(0, 1)+"."+views.slice(1, 2)+"M";
       }
-  }else{
+  }else if(views.length>9){
       return views.slice(0, 1)+"."+views.slice(1, 2)+"B";
   }
 }
@@ -287,4 +313,26 @@ export function PlayerDateFormatter(publishedAt){
     var Months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
     var formattedDate=Months[date.getMonth()]+" "+date.getDate()+", "+date.getFullYear()
     return formattedDate;
+}
+
+export function formatVideoDuration(duration){
+    try{
+         var iso8601DurationRegex = /(-)?P(?:([.,\d]+)Y)?(?:([.,\d]+)M)?(?:([.,\d]+)W)?(?:([.,\d]+)D)?T(?:([.,\d]+)H)?(?:([.,\d]+)M)?(?:([.,\d]+)S)?/;
+        var matches = duration.match(iso8601DurationRegex);
+        var hours= matches[6] === undefined ? 0 : matches[6];
+        var minutes= matches[7] === undefined ? 0 : matches[7];
+        var seconds=matches[8] === undefined ? 0 : matches[8];
+        if(hours=="0"){
+            if(seconds.length!==2){
+                var seconds="0"+seconds;
+            }
+            var formattedDuration=minutes+":"+seconds;
+        }else{
+            var formattedDuration=hours+":"+minutes+":"+seconds;
+        }
+    } catch(err){
+        var formattedDuration="0:00"
+    }
+   
+    return formattedDuration;
 }

@@ -9,6 +9,7 @@ import { PlayerDateFormatter } from '../util/utils.js';
 import { formatViews } from '../util/utils.js';
 import { formatDate } from '../util/utils.js';
 import { concatVideosChannelsCommentsRelatedVideos } from '../util/utils.js';
+import {Link} from "react-router-dom";
 
 
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
@@ -16,7 +17,7 @@ import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 import ReplyIcon from '@material-ui/icons/Reply';
 import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 
 
@@ -26,9 +27,10 @@ function VideoPlayer(props){
     const [video, setVideo] = useState();
     const [showMoreDescription,toggleShow]=useReducer(
         (showMoreDescription)=>!showMoreDescription,true);
-
+  
     useEffect(() => {
         props.setIsHome(false);
+        props.setSidebarActive("");
         var videoPromise=getVideoById(videoId);
         videoPromise
         .then(async videos=> {
@@ -39,7 +41,7 @@ function VideoPlayer(props){
             setVideo(videosAndChannelThumbnail);
         })
         window.scrollTo(0, 0);
-    }, [])
+    }, [videoId])
     
 
     return (
@@ -162,13 +164,15 @@ function VideoPlayer(props){
                                     <div className="relatedVideo-content">
                                         {
                                             item.relatedVideos.map((video)=>(
-                                                <div className="relatedVideo-item" key={video.id.videoId}>
+                                                <Link to={`/watch/${video.id.videoId}`} key={video.id.videoId}>
+                                                <div className="relatedVideo-item" >
                                                     
                                                     <img className="relatedVideo-thumbnail-img" src={video.snippet.thumbnails.medium.url} alt="videoThumbnail" />
                                                     
                                                     <div className="relatedVideo-details">
                                                         <div className="relatedVideo-details-title">
                                                             {video.snippet.title}
+                                                            
                                                         </div>
                                                         <div className="relatedVideo-channelName">
                                                             {video.snippet.channelTitle}
@@ -178,7 +182,18 @@ function VideoPlayer(props){
                                                         </div>
                                                         
                                                     </div>
+                                                    <div className="relatedVideo-more">
+                                                        <MoreVertIcon style={{ fontSize: 20 }}/>
+                                                        {/*  TODO: drop down for add to libray n watch later
+                                                        <div className="relatedVideo-more-dropdown">
+                                                            <ul>
+                                                                <li>Add to Library</li>
+                                                                <li>Save to Watch Later</li>
+                                                            </ul>
+                                                        </div> */}
+                                                    </div>
                                                 </div>
+                                                </Link>
                                             ))
                                         }
                                             

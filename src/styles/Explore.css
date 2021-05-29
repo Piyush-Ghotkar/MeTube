@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;500&display=swap');
+
+
+
+.trendingVideos{
+    height: 100rem;   
+}
+
+.explore .main-body,.main-body-minSidebar{
+    margin-top: 2rem;
+}
+
+.trendingVideos{
+    display: inline-block;
+    margin-top: 1.5rem;
+    margin-left: 6.7rem;
+}
+
+.trendingVideos-heading{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.videosList{
+    margin-top:1rem;
+    
+}
+
+.trendingVideos-item{
+    margin-bottom: 0.8rem;
+    max-width: 600px;
+    cursor: pointer;
+}
+
+.trendingVideos-thumbnail{
+    width: 246px;
+    height: 138px;
+    position: relative;
+}
+
+
+.trendingVideos-duration{
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+    background-color: black;
+    color: white;
+    font-size: 0.78rem;
+    padding: 0.1rem 0.2rem;
+    font-weight: 500;
+    transform: translate(12.8rem,-145%);
+    
+}
+
+.trendingVideos-details{
+    display: inline-block;
+    vertical-align: super;
+    position: absolute;
+    margin-left: 0.8rem;
+    font-family: 'Roboto', sans-serif;
+    width:37%;
+
+}
+
+.trendingVideos-title{
+    font-size: 1.12rem;
+    font-weight: 400;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    width: 95%;
+}
+
+.trendingVideos-channelStats{
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.78rem;
+    color: #606060;
+    margin-top: 0.2rem;
+}
+
+.stats{
+    display: inline;
+    margin-left: 0.5rem;
+}
+
+.trendingVideos-description{
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.76rem;
+    color: #606060;
+    margin-top: 0.6rem;
+    line-height: 1.1rem;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.moreIcon{
+    display: none;
+    float: right;
+    color: #606060;
+    cursor: pointer;
+    vertical-align: super;
+}
+
+.trendingVideos-item:hover .moreIcon{
+    display: block
+}

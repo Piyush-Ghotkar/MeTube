@@ -9,6 +9,7 @@ import Header from './Header.js'
 import DarkBG from './DarkBG.js'
 import Sidebar from './Sidebar.js'
 import Main from './Main.js'
+import Explore from './Explore.js'
 import VideoPlayer from './VideoPlayer.js'
 
 
@@ -70,6 +71,7 @@ function App() {
 
       <Routes>
         <Route  exact path='/'  element={<Main nav={nav} setIsHome={setIsHome} />} />
+        <Route  path="/feed/explore"  element={<Explore nav={nav} setSidebarActive={setSidebarActive} setIsHome={setIsHome} />} />
         <Route path="/watch/:videoId" element={<VideoPlayer nav={nav} setNavSidebar={setNavSidebar} setSidebarActive={setSidebarActive} setIsHome={setIsHome} />} />
       </Routes>
     </>

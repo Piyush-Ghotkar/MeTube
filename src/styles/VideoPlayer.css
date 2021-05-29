@@ -326,7 +326,7 @@
  }
 
  .relatedVideosColumn{
-    width: 30%;
+    width: 29%;
     display: inline-block;
     margin-top: 1.6rem;
     margin-left: 0rem;
@@ -354,6 +354,7 @@
     display: inline-block;
     vertical-align: super;
     margin-left: 0.45rem;
+    width:50%;
     position: absolute;
     cursor: pointer;
 }
@@ -385,3 +386,36 @@
     color: #606060;
     margin-top: 0.2rem;
 }
+
+.relatedVideo-more{
+    float: right;
+    display: none;
+    vertical-align: super;
+    color: #606060;
+    cursor: pointer;
+    position: relative;
+}
+
+.relatedVideo-item:hover .relatedVideo-more{
+    display: inline-block;
+}
+
+/* .relatedVideo-more-dropdown{
+    display: none;
+    position: absolute;
+    left: -10rem;
+    top: 1rem;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+.relatedVideo-more:active .relatedVideo-more-dropdown{
+    display: block;
+}
+
+.relatedVideo-more-dropdown:hover{
+    display: block;
+
+} */

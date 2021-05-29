@@ -3,6 +3,8 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { getHomeVideos } from '../util/utils.js';
 import { getChannelsThumbnails } from '../util/utils.js';
 import { concatVideosChannels } from '../util/utils.js';
+import { formatVideoDuration } from '../util/utils.js';
+
 import { formatViews } from '../util/utils.js';
 import { formatDate } from '../util/utils.js';
 import {useState,useEffect,useRef} from 'react';
@@ -100,12 +102,11 @@ function Main(props){
                                 <Link to={`/watch/${item.id}`}  key={item.id}><div className="item-render single-item-wd">
                                     <div className="thumbnail">
                                         <img className="single-item-wd static-thumb" alt="thumbnail" src={item.snippet.thumbnails.medium.url} />
-                                            {console.log("rendering html")}
+                                        <div className="video-duration">{formatVideoDuration(item.contentDetails.duration)}</div>
                                         {/* <img className="single-item-wd gif-thumb" alt="thumbnail" src="https://i.ytimg.com/vi/7XDfXH-SROE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBgLomgzLQxNf2QPBkluBBep3ZPzw" /> */}
                                     </div>
                                     <div className="details">
                                         <img className="channel-img" alt="channel-thumbnail" src={item.snippet.channelThumbnail} />
-                                        {/* {console.log(item.id)} */}
                                         <div className="details-txt">
                                             <div className="details-title">
                                                 {item.snippet.title}

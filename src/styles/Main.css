@@ -76,6 +76,18 @@
     margin-left: 0.15vw;
     display: inline;
     float: left;
+    position: relative;
+}
+
+.video-duration{
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+    background-color: black;
+    color: white;
+    font-size: 0.78rem;
+    padding: 0.1rem 0.2rem;
+    font-weight: 500;
+    transform: translate(15.9rem,-145%);
 }
 
 .details-txt{
