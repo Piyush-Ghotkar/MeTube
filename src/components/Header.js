@@ -6,10 +6,15 @@ import VideoCallIcon from '@material-ui/icons/VideoCall';
 import AppsIcon from '@material-ui/icons/Apps';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import { Navigate, useNavigate } from 'react-router-dom';
+import CloseIcon from '@material-ui/icons/Close';
+import { useNavigate } from 'react-router-dom';
+import {useState} from 'react';
+import {useEffect} from  "react";
 
 
 function Header(props){
+
+    const [mobileSearchBar, setMobileSearchBar] = useState(false);
 
     var query="";
     let navigate = useNavigate();
@@ -21,9 +26,11 @@ function Header(props){
     function searchQuery(){
         
         if(query!==""){
-            navigate("/result/search_query/"+query)
+            navigate("/result/search_query/"+query);
+            setMobileSearchBar(false);
         }
     }
+    
 
 return (
     <>
@@ -31,10 +38,19 @@ return (
         <div className="header-top-margin">
         <div className="inputs">
             
-            <input type="text" placeholder="Search" onChange={updateInputValue} />
-            <div className="header-icon-text" onClick={searchQuery}>
-                <SearchIcon className="search-icon" style={{ fontSize: 20 }} />
-                <div className="header-txt-1 search-hover-txt">Search</div>
+            <div className="mobileSearchIcon">
+                <div className="header-icon-text" onClick={()=>setMobileSearchBar(true)}>
+                    <SearchIcon className="mobSearch-icon" style={{ fontSize: 25 }} />
+                    <div className="header-txt-1 search-hover-txt">Search</div>
+                </div>
+            </div>
+
+            <div className="desktopSearch">
+                <input type="text" placeholder="Search" onChange={updateInputValue} />
+                <div className="header-icon-text" onClick={searchQuery}>
+                    <SearchIcon className="search-icon" style={{ fontSize: 20 }} />
+                    <div className="header-txt-1 search-hover-txt">Search</div>
+                </div>
             </div>
 
             <div className="position-block" ></div>
@@ -70,6 +86,16 @@ return (
             <AccountCircleIcon className="account-icon"  style={{ fontSize: 34 }} />
 
         </div>
+
+        <div className={(mobileSearchBar?"ActiveMobileSearch":"mobileSearch")}>
+            <input type="text" placeholder="Search" onChange={updateInputValue} />
+            <div className="header-icon-text" onClick={searchQuery}>
+                <SearchIcon className="search-icon" style={{ fontSize: 20 }} />
+                <div className="header-txt-1 search-hover-txt">Search</div>
+                <CloseIcon className="close-icon" style={{ fontSize: 20 }} onClick={()=>setMobileSearchBar(false)} />
+            </div>
+        </div>
+
         </div>
  
         <div className={(props.nav.sidebarMin?"header-bottom-margin":"header-top-margin")+(props.nav.isHome?(props.nav.sidebarActive!=="home"?" no-top-nav":""):" no-top-nav") }>

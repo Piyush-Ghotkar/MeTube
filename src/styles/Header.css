@@ -208,10 +208,114 @@ input[type=text]:focus {
     display: none;
 }
 
-
-
-
 .signOut{
     display: none;
 }
 
+.desktopSearch{
+    display: inline;
+}
+
+.mobileSearchIcon,.mobileSearch{
+    display: none;
+}
+
+.close-icon{
+    vertical-align: middle;
+    display: inline;
+    color: #777373;
+    padding: 1.1vh;
+    margin-left: 0.5rem;
+}
+
+/* Mobile screen responsive css */
+
+
+@media only screen and (max-width: 600px) {
+
+    .inputs{
+        margin-left: 80vw;
+        
+    }
+
+    input{
+        width: 64.8vw;
+        margin-left: 5.9vw;
+    }
+
+    .desktopSearch{
+        display: none;
+    }
+    
+    .mobileSearchIcon{
+        display: inline;
+    }
+    .mobSearch-icon{
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        vertical-align: middle;
+        display: inline;
+        padding: 0.10rem 0.32rem;
+        background-color: transparent;
+        color: #777373;
+        border: none;
+        border-radius: 3rem;
+    }
+
+    .ActiveMobileSearch{
+        position: absolute;
+        background: #f9f9f9;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        opacity: 1;
+    }
+
+
+    .search-hover-txt{
+        left: -0.5rem;
+    }
+
+    .position-block{
+      margin-left: -2.4rem;
+    }
+    
+    .mic-icon{
+        display: none !important;
+    }
+
+    .right-margin-f-create{
+        display: none !important;
+    }
+
+    .right-margin-g-apps{
+        display: none !important;
+    }
+
+    .create-icon{
+        display: none !important;
+    }
+
+    .account-icon{
+        margin-left: 0.6rem;
+    }
+    
+
+    .top-nav{
+        overflow-x: scroll;
+        -ms-overflow-style: none;  /* Hide scrollbar Internet Explorer 10+ */
+        scrollbar-width: none;  /* Hide scrollbar Firefox */
+    }
+
+    .top-nav::-webkit-scrollbar { 
+        display: none;  /* Hide scrollbar Safari and Chrome */
+    }
+
+    .header-top-margin{
+        margin-left: 0vh;
+    }
+    
+    .header-bottom-margin{
+        margin-left: 0rem;
+    }
+}

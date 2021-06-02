@@ -14,13 +14,9 @@ import {Link} from "react-router-dom";
 function Main(props){
 
     const [videosObj,setVideosObj]=useState();
-    // const [promiseChannel, setPromiseChannel] = useState()
-    // const [promiseVideos, setPromiseVideos] = useState()
-    // var promiseVideos;
     const promiseVideos = useRef();
     const promiseChannel=useRef();
 
-    // var promiseChannel;
     useEffect(()=>{
         props.setIsHome(true);
     },[])

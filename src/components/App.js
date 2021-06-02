@@ -19,6 +19,7 @@ function App() {
 
   const [nav,setNav]=useState({"sidebarMin":false, "sidebarActive":'home', "headerbarActive":'all', "isHome":true});
   const [headTitle, setHeadTitle] = useState("MeTube");
+  var mobileScreenSize = window.matchMedia("(max-width: 600px)");
 
   function setNavSidebar(){
     setNav(prevState => ({
@@ -50,11 +51,18 @@ function App() {
   }
 
   function setIsHome(val){
-    setNav(prevState => ({
-      ...prevState,
-      isHome: val,
-      sidebarMin: !val
-    }));
+    if (!mobileScreenSize.matches) {
+      setNav(prevState => ({
+        ...prevState,
+        isHome: val,
+        sidebarMin: !val
+      }));
+    }else{
+      setNav(prevState => ({
+        ...prevState,
+        isHome: val
+      }));
+    }
   }
 
   function setHeadTitleAsVidoeTitle(title){
@@ -64,6 +72,11 @@ function App() {
     setHeadTitle(title);
   }
   
+  useEffect(() => {
+    if (mobileScreenSize.matches) { // If media query matches
+      setNavSidebar();
+    }
+  }, [])
 
   return (
     <>
@@ -72,7 +85,7 @@ function App() {
       </Helmet>
       <Sidebar nav={nav} setNavSidebar={setNavSidebar} setSidebarActive={setSidebarActive} setIsHome={setIsHome} setNavHeaderActive={setNavHeaderActive} />
       {
-        (nav.isHome===false && nav.sidebarMin===false?
+        ((nav.isHome===false && nav.sidebarMin===false)||(mobileScreenSize.matches  && nav.sidebarMin===false)?
           <DarkBG setNavSidebar={setNavSidebar} />
           :"")
       }

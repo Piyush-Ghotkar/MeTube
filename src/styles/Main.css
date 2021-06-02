@@ -164,3 +164,35 @@
 /* color: #030303;
 -webkit-line-clamp: 2;
  */
+
+ @media only screen and (max-width: 600px) {
+    .main-body,.main-body-minSidebar{
+        margin-left: 0px;
+        margin-top: 5.6rem;
+    }
+
+    .row{
+        flex-direction: column;
+    }
+
+    .contents{
+        margin-left:3rem;
+        margin-top: 1.5rem;
+    }
+
+    .single-item-wd{
+        width: 100%;
+    }
+    
+    .item-render{
+        margin-bottom: 1.5rem;
+    }
+
+    .channel-img{
+        width: 8vw;
+    }
+
+    .video-duration{
+        transform: translate(17.4rem,-145%);
+    }
+ }
