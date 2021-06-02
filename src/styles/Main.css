@@ -173,11 +173,20 @@
 
     .row{
         flex-direction: column;
+        flex-wrap: nowrap;
     }
 
     .contents{
-        margin-left:3rem;
+        margin-left:0rem;
         margin-top: 1.5rem;
+    }
+
+    .thumbnail{
+        width: 100%;
+    }
+
+    .details-txt{
+        width: 81%;
     }
 
     .single-item-wd{
@@ -193,7 +202,7 @@
     }
 
     .video-duration{
-        transform: translate(17.4rem,-145%);
+        transform: translate(23.2rem,-145%);
     }
 
     .details-hover-options{
