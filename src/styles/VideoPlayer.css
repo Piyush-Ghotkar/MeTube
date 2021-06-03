@@ -399,6 +399,79 @@
     display: inline-block;
 }
 
+
+@media only screen and (max-width: 600px) {
+
+    .sidebarSmaller{
+        width: 0px;
+    }
+
+    .watch-contents{
+        max-width: 100%;
+    }
+    .playerColumn{
+        width: 100%;
+    }
+    
+
+    .videoTitle{
+        margin-left: 0.8rem;
+        line-height: 1.6rem
+    }
+
+    .player-views{
+        margin-left: 0.8rem;
+        margin-top: 0.4rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .player-icons{
+        display: block;
+        float: inherit;
+        margin-top: 1.4rem;
+    }
+
+    .player-stat-mobile-margin{
+        margin-left: 0px;
+    }
+
+    .channel-description{
+        margin-left: 0.8rem;
+
+    }
+
+    .channelThumb{
+        width: 10.1vw;
+    }
+
+    .subscribeButton{
+        margin-top: 0px;
+        color: #c00;
+        background-color: transparent;
+    }
+
+    .commentsSection{
+        margin-left: 0.8rem;
+        margin-top: 1rem;
+    }
+
+    .comment-profileImg{
+        width: 9.6vw;
+    }
+
+    .comment-details{
+        width: 86%;
+    }
+
+    .relatedVideosColumn{
+        display: block;
+        width: 100%;
+    }
+
+    .relatedVideo-item{
+        margin-left: 0.8rem;
+    }
+}
 /* .relatedVideo-more-dropdown{
     display: none;
     position: absolute;

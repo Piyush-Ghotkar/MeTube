@@ -43,6 +43,14 @@ function VideoPlayer(props){
         })
         window.scrollTo(0, 0);
     }, [videoId])
+
+    var mobileScreenSize = window.matchMedia("(max-width: 600px)");
+    var playerWidth="890";
+    var playerHeight="510";
+    if (mobileScreenSize.matches) { // If media query matches
+        playerWidth="100%";
+        playerHeight="230";
+    }
     
 
     return (
@@ -54,7 +62,7 @@ function VideoPlayer(props){
                             video.items.map((item)=>(
                                 <>
                                 <div className="playerColumn" key={item.id}>
-                                    <iframe width="890" height="510" src={"//www.youtube.com/embed/"+item.id} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                                    <iframe className="fixed" width={playerWidth} height={playerHeight} src={"//www.youtube.com/embed/"+item.id} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                                     <div className="videoTitle">
                                         {item.snippet.localized.title}
                                     </div>
@@ -65,7 +73,7 @@ function VideoPlayer(props){
                                                 {PlayerDateFormatter(item.snippet.publishedAt)}
 
                                             <div className="player-icons">
-                                                <div className="player-stat" >
+                                                <div className="player-stat player-stat-mobile-margin" >
                                                 <div className="stat-hover-txt">I like this</div>
                                                     <ThumbUpIcon className="player-icon" />
                                                     <div className="player-icon-txt">
