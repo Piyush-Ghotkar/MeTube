@@ -111,3 +111,38 @@
 .trendingVideos-item:hover .moreIcon{
     display: block
 }
+
+@media only screen and (max-width: 600px) {
+    
+    .trendingVideos-heading{
+        margin-left: 0.8rem;
+    }
+
+    .trendingVideos{
+        margin-left: 0rem;
+        width: 100%;
+    }
+
+    .trendingVideos-thumbnail{
+        width: 100%;
+        height: 213px;
+    }
+
+    .trendingVideos-details{
+        display: block;
+        position: inherit;
+        width: 97%;
+    }
+
+    .trendingVideos-channelStats{
+        margin-bottom:1rem;
+    }
+
+    .trendingVideos-description{
+        display: none;
+    }
+
+    .trendingVideos-duration{
+        transform: translate(23.4rem,-145%);
+    }
+}

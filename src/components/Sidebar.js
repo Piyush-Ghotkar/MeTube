@@ -55,7 +55,7 @@ function Siderbar(props){
                                 </div>
                         </li>
                     </Link>
-                    <li onClick={()=>{props.setSidebarActive('subscriptions')}} className={(props.nav.sidebarActive==='subscriptions'?"active":"")}>
+                    <li className={(props.nav.sidebarActive==='subscriptions'?"active":"")}>
                         <SubscriptionsIcon className={(props.nav.sidebarActive==='subscriptions'?"active-icon":"")+" li-icon smaller-icon"}  style={{ fontSize: 20 }}/>
                             <div className="sidebar-txt">
                              Subscriptions
@@ -64,25 +64,25 @@ function Siderbar(props){
                     
                     <hr />
                     
-                    <li onClick={()=>{props.setSidebarActive('library')}} className={(props.nav.sidebarActive==='library'?"active":"")}>
+                    <li ssName={(props.nav.sidebarActive==='library'?"active":"")}>
                         <VideoLibraryIcon className={(props.nav.sidebarActive==='library'?"active-icon":"")+" li-icon "}/>
                             <div className="sidebar-txt">
                              Library
                             </div>
                     </li>
-                    <li onClick={()=>{props.setSidebarActive('history')}} className={(props.nav.sidebarActive==='history'?"active":"")}>
+                    <li ssName={(props.nav.sidebarActive==='history'?"active":"")}>
                         <HistoryIcon className={(props.nav.sidebarActive==='history'?"active-icon":"")+" li-icon "} style={{ fontSize: 22.5 }}/>
                             <div className="sidebar-txt">
                              History
                             </div>
                     </li>
-                    <li onClick={()=>{props.setSidebarActive('watchLater')}} className={(props.nav.sidebarActive==='watchLater'?"active":"")}>
+                    <li className={(props.nav.sidebarActive==='watchLater'?"active":"")}>
                         <WatchLaterIcon className={(props.nav.sidebarActive==='watchLater'?"active-icon":"")+" li-icon smaller-icon"} style={{ fontSize: 20 }}/>
                             <div className="sidebar-txt">
                              Watch later
                             </div>
                     </li>
-                    <li onClick={()=>{props.setSidebarActive('likedVideos')}} className={(props.nav.sidebarActive==='likedVideos'?"active":"")}>
+                    <li  className={(props.nav.sidebarActive==='likedVideos'?"active":"")}>
                         <ThumbUpAltIcon className={(props.nav.sidebarActive==='likedVideos'?"active-icon":"")+" li-icon smaller-icon"} style={{ fontSize: 20 }}/>
                             <div className="sidebar-txt">
                              Liked videos
@@ -191,7 +191,7 @@ function Siderbar(props){
                             </div>
                         </li>
                     </Link>
-                        <li onClick={()=>{props.setSidebarActive('subscriptions')}} className={(props.nav.sidebarActive==='subscriptions'?"active":"")} >
+                        <li  className={(props.nav.sidebarActive==='subscriptions'?"active":"")} >
                             <div className="li-content">
                                 <SubscriptionsIcon className={(props.nav.sidebarActive==='subscriptions'?"active-icon":"")+" li-icon smaller-icon"} style={{ fontSize: 20 }}/>
                                     <div className="sidebar-txt">
@@ -199,7 +199,7 @@ function Siderbar(props){
                                     </div>
                             </div>
                         </li>
-                        <li onClick={()=>{props.setSidebarActive('library')}} className={(props.nav.sidebarActive==='library'?"active":"")}>
+                        <li Name={(props.nav.sidebarActive==='library'?"active":"")}>
                             <div className="li-content">
                                 <VideoLibraryIcon className={(props.nav.sidebarActive==='library'?"active-icon":"")+" li-icon "} />
                                 <div className="sidebar-txt">
