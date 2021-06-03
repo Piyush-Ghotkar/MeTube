@@ -471,6 +471,10 @@
     .relatedVideo-item{
         margin-left: 0.8rem;
     }
+
+    .relatedVideo-details-title{
+        width: 93%;
+    }
 }
 /* .relatedVideo-more-dropdown{
     display: none;

@@ -144,7 +144,7 @@ function VideoPlayer(props){
                                         <div className="comments">
                                             {(item.commentThread?
                                             item.commentThread.map((comment)=>(
-                                                <div className="comment">
+                                                <div className="comment" key={comment.id}>
                                                     <img className="comment-profileImg" src={comment.snippet.topLevelComment.snippet.authorProfileImageUrl}/>
                                                     <div className="comment-details">
                                                         <div className="comment-profileName">{comment.snippet.topLevelComment.snippet.authorDisplayName}
