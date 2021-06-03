@@ -29,7 +29,6 @@
 }
 
 .row{
-    /*TODO: flex is causing problems at last line of video   */
    display: flex;  
     flex-wrap: wrap;
     justify-content: center;
