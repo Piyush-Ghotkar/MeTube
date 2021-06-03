@@ -20,7 +20,7 @@ Metube is a YouTube clone developed in react.js
     1. Clone repository
     2. Run command "npm install"
     3. While dependencies get install, login to your Google Cloud Platfrom 
-       (if you don't have one create one, it's free!!)
+       (if you don't have one, create one. It's free!!)
     4. Search for "YouTube Data API V3" in GCP's products & resources search bar
     5. Start YouTube Data API by clicking on Enable button
     6. Now, go to the Credentials tab and create api key
