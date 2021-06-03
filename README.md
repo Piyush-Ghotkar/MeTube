@@ -21,5 +21,3 @@ Metube is a YouTube clone developed in react.js
     3. Finally, run command "npm start" 
 
 #### Check out MeTube at https://metube00.netlify.app/
-
-Note: MeTube is not responsive yet
