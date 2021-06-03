@@ -41,7 +41,7 @@ return (
             <div className="mobileSearchIcon">
                 <div className="header-icon-text" onClick={()=>setMobileSearchBar(true)}>
                     <SearchIcon className="mobSearch-icon" style={{ fontSize: 25 }} />
-                    <div className="header-txt-1 search-hover-txt">Search</div>
+                    
                 </div>
             </div>
 
