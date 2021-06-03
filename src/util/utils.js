@@ -1,4 +1,4 @@
-var key=process.env.REACT_APP_API_KEY2;
+var key=process.env.REACT_APP_API_KEY;
 
 export async function getHomeVideos(category){
     var url;

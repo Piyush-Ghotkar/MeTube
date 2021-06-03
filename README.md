@@ -1,3 +1,4 @@
+
 # MeTube 
 
 Metube is a YouTube clone developed in react.js
@@ -18,6 +19,14 @@ Metube is a YouTube clone developed in react.js
 #### Steps to Run Metube locally:
     1. Clone repository
     2. Run command "npm install"
-    3. Finally, run command "npm start" 
+    3. While dependencies get install, login to your Google Cloud Platfrom 
+       (if you don't have one create one, it's free!!)
+    4. Search for "YouTube Data API V3" in GCP's products & resources search bar
+    5. Start YouTube Data API by clicking on Enable button
+    6. Now, go to the Credentials tab and create api key
+       (api key will look like this "AIzaSyDnxYcaevd58WJeQym0NXAuTQxbO-Fyopo")
+    7. Copy this key & replace it in .env.apiKey file which is present in root directory of project
+       (ex. REACT_APP_API_KEY= "YourApiKey")
+    8. Finally, run command "npm start" 
 
 #### Check out MeTube at https://metube00.netlify.app/
