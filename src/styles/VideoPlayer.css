@@ -330,7 +330,7 @@
     margin-top: 1.6rem;
     margin-left: 0rem;
     vertical-align: top;
-    position: absolute;
+    /* position: absolute; */
 }
 
 .relatedVideo-item{
@@ -353,7 +353,7 @@
     display: inline-block;
     vertical-align: super;
     margin-left: 0.45rem;
-    width:50%;
+    width: 11vw;
     position: absolute;
     cursor: pointer;
 }
