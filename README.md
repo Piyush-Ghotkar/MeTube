@@ -11,15 +11,16 @@ Metube is a YouTube clone developed in react.js
 
 #### Features:
     1. Home page video listing
-    2. Category based videos updated dynamically (ex: music,news,sports)
-    3. Dynamic Current trending videos
-    4. Video player
-    5. Suggesting related videos dynamically
+    2. Support searching any video available on youtube
+    3. Category based videos updated dynamically (ex: music,news,sports)
+    4. Dynamic current trending videos
+    5. Video player
+    6. Suggesting related videos dynamically
 
 #### Steps to Run Metube locally:
     1. Clone repository
     2. Run command "npm install"
-    3. While dependencies get install, login to your Google Cloud Platfrom 
+    3. While dependencies get install, login to your Google Cloud Platform 
        (if you don't have one, create one. It's free!!)
     4. Search for "YouTube Data API V3" in GCP's products & resources search bar
     5. Start YouTube Data API by clicking on Enable button
