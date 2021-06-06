@@ -86,7 +86,8 @@
     font-size: 0.78rem;
     padding: 0.1rem 0.2rem;
     font-weight: 500;
-    transform: translate(15.9rem,-145%);
+    bottom: 8px;
+    right: 3px;
 }
 
 .details-txt{
@@ -202,6 +203,8 @@
 
     .video-duration{
         transform: translate(23.2rem,-145%);
+        bottom: 0px;
+        right: 0px;
     }
 
     .details-hover-options{
