@@ -23,6 +23,12 @@ function Header(props){
         query=input.target.value.trim();
     }
 
+    function searchQueryByEnter(e){
+        if(e.code === "Enter"){
+            searchQuery();
+        }
+    }
+
     function searchQuery(){
         
         if(query!==""){
@@ -46,7 +52,7 @@ return (
             </div>
 
             <div className="desktopSearch">
-                <input type="text" placeholder="Search" onChange={updateInputValue} />
+                <input type="text" placeholder="Search" onChange={updateInputValue} onKeyPress={searchQueryByEnter}/>
                 <div className="header-icon-text" onClick={searchQuery}>
                     <SearchIcon className="search-icon" style={{ fontSize: 20 }} />
                     <div className="header-txt-1 search-hover-txt">Search</div>
@@ -61,36 +67,36 @@ return (
             </div>
 
             <div className="position-block right-margin-f-create" ></div>
-               
-            <div className="header-icon-text">   {/* use signOut here */}
-                <VideoCallIcon className="create-icon" />
-                <div className="header-txt-1">Create</div>
-            </div>
-
-            <div className="position-block right-margin-g-apps" ></div> {/* use signOut here */}
-
-            <div className="header-icon-text">
-                <AppsIcon className="create-icon" />
-                <div className="header-txt-1 apps-hover-txt">MeTube Apps</div>
-            </div>
-
-            <div className="position-block right-margin-g-apps" ></div>
-
-            <div className="header-icon-text"> {/* use signOut here /option icon insted*/}
-                <NotificationsIcon className="create-icon" />
-                <div className="header-txt-1 apps-hover-txt">Notifications</div>
-            </div>
-
-            <div className="position-block right-margin-g-apps" ></div>
             
-            <AccountCircleIcon className="account-icon"  style={{ fontSize: 34 }} />
+            <div className="rightSideIcons">
+                <div className="header-icon-text">   {/* use signOut here */}
+                    <VideoCallIcon className="create-icon" />
+                    <div className="header-txt-1">Create</div>
+                </div>
 
-        </div>
+                <div className="position-block right-margin-g-apps" ></div> {/* use signOut here */}
+
+                <div className="header-icon-text">
+                    <AppsIcon className="create-icon" />
+                    <div className="header-txt-1 apps-hover-txt">MeTube Apps</div>
+                </div>
+
+                <div className="position-block right-margin-g-apps" ></div>
+
+                <div className="header-icon-text"> {/* use signOut here /option icon insted*/}
+                    <NotificationsIcon className="create-icon" />
+                    <div className="header-txt-1 apps-hover-txt">Notifications</div>
+                </div>
+
+                <div className="position-block right-margin-g-apps " ></div>
+                <AccountCircleIcon className="account-icon rightSideIcons"  style={{ fontSize: 34 }} />
+                </div>
+            </div>
 
         <div className={(mobileSearchBar?"ActiveMobileSearch":"mobileSearch")}>
             <input type="text" placeholder="Search" onChange={updateInputValue} />
             <div className="header-icon-text" onClick={searchQuery}>
-                <SearchIcon className="search-icon" style={{ fontSize: 20 }} />
+                <SearchIcon className="search-icon" style={{ fontSize: 20 }} onKeyPress={searchQueryByEnter}/>
                 <div className="header-txt-1 search-hover-txt">Search</div>
                 <CloseIcon className="close-icon" style={{ fontSize: 20 }} onClick={()=>setMobileSearchBar(false)} />
             </div>
