@@ -158,7 +158,7 @@ input[type=text]:focus {
     margin-top: 0.6rem;
     margin-bottom: 0.5rem;
     color: #065fd4;
-    margin-left: 1rem;
+    margin-left: 0rem;
     cursor: pointer;
 }
 
@@ -227,6 +227,12 @@ input[type=text]:focus {
     padding: 1.1vh;
     margin-left: 0.5rem;
 }
+
+.rightSideIcons{
+    float: right;
+    margin-right: 0.4rem;
+}
+
 
 /* Mobile screen responsive css */
 
