@@ -62,7 +62,9 @@ function VideoPlayer(props){
                             video.items.map((item)=>(
                                 <>
                                 <div className="playerColumn" key={item.id}>
-                                    <iframe className="fixed" width={playerWidth} height={playerHeight} src={"//www.youtube.com/embed/"+item.id} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                                    <div class="video-container">
+                                        <iframe className="fixed" width={playerWidth} height={playerHeight} src={"//www.youtube.com/embed/"+item.id} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                                    </div>
                                     <div className="videoTitle">
                                         {item.snippet.localized.title}
                                     </div>
