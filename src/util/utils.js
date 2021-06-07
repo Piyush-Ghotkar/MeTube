@@ -120,7 +120,7 @@ export async function getChannelsThumbnails(videosObj){
 
 export async function getVideoById(id){
     var url="https://www.googleapis.com/youtube/v3/videos";
-    var part="snippet,statistics";
+    var part="snippet,statistics,contentDetails";
 
     url+="?part="+part+"&id="+id+"&key="+key;
 
