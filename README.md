@@ -16,6 +16,7 @@ Metube is a YouTube clone developed in react.js
     4. Dynamic current trending videos
     5. Video player
     6. Suggesting related videos dynamically
+    7. Track videos you watched on History tab
 
 #### Steps to Run Metube locally:
     1. Clone repository
