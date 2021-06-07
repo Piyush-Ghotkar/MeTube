@@ -15,7 +15,7 @@ function Explore(props){
     useEffect(()=>{
         props.setSidebarActive('explore');
         window.scrollTo(0, 0);
-        props.setHeadTitleAsVidoeTitle("Explore");
+        props.setHeadTitleAsVideoTitle("Explore");
         props.setIsHome(true);
 
 

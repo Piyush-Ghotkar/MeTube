@@ -19,7 +19,7 @@ function Search(props){
     useEffect(()=>{
         props.setSidebarActive('');
         window.scrollTo(0, 0);
-        props.setHeadTitleAsVidoeTitle(query);
+        props.setHeadTitleAsVideoTitle(query);
         props.setIsHome(true);
 
 

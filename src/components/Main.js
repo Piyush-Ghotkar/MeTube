@@ -23,7 +23,7 @@ function Main(props){
 
     useEffect(()=>{
         window.scrollTo(0, 0);
-        props.setHeadTitleAsVidoeTitle("MeTube");
+        props.setHeadTitleAsVideoTitle("MeTube");
         var videos= getHomeVideos(props.nav.headerbarActive);
         promiseVideos.current=videos;
 
