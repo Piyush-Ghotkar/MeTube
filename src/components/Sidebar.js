@@ -70,12 +70,14 @@ function Siderbar(props){
                              Library
                             </div>
                     </li>
-                    <li className={(props.nav.sidebarActive==='history'?"active":"")}>
-                        <HistoryIcon className={(props.nav.sidebarActive==='history'?"active-icon":"")+" li-icon "} style={{ fontSize: 22.5 }}/>
-                            <div className="sidebar-txt">
-                             History
-                            </div>
-                    </li>
+                    <Link to="/feed/history">
+                        <li onClick={()=>{props.setSidebarActive('history')}} className={(props.nav.sidebarActive==='history'?"active":"")}>
+                            <HistoryIcon className={(props.nav.sidebarActive==='history'?"active-icon":"")+" li-icon "} style={{ fontSize: 22.5 }}/>
+                                <div className="sidebar-txt">
+                                History
+                                </div>
+                        </li>
+                    </Link>
                     <li className={(props.nav.sidebarActive==='watchLater'?"active":"")}>
                         <WatchLaterIcon className={(props.nav.sidebarActive==='watchLater'?"active-icon":"")+" li-icon smaller-icon"} style={{ fontSize: 20 }}/>
                             <div className="sidebar-txt">

@@ -31,10 +31,11 @@ function VideoPlayer(props){
     useEffect(() => {
         props.setIsHome(false);
         props.setSidebarActive("");
+        props.updateHistory(videoId);
         var videoPromise=getVideoById(videoId);
         videoPromise
         .then(async videos=> {
-            props.setHeadTitleAsVidoeTitle(videos.items[0].snippet.localized.title);
+            props.setHeadTitleAsVideoTitle(videos.items[0].snippet.localized.title);
             var channels= await getChannelsThumbnails(videos);
             var comments=await getCommentsById(videos.items[0].id)
             var relatedVideos= await getRelatedVideosByID(videos.items[0].id)
@@ -62,7 +63,7 @@ function VideoPlayer(props){
                             video.items.map((item)=>(
                                 <>
                                 <div className="playerColumn" key={item.id}>
-                                    <div class="video-container">
+                                    <div className="video-container">
                                         <iframe className="fixed" width={playerWidth} height={playerHeight} src={"//www.youtube.com/embed/"+item.id} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                                     </div>
                                     <div className="videoTitle">
