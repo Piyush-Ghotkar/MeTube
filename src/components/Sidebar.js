@@ -64,13 +64,13 @@ function Siderbar(props){
                     
                     <hr />
                     
-                    <li ssName={(props.nav.sidebarActive==='library'?"active":"")}>
+                    <li className={(props.nav.sidebarActive==='library'?"active":"")}>
                         <VideoLibraryIcon className={(props.nav.sidebarActive==='library'?"active-icon":"")+" li-icon "}/>
                             <div className="sidebar-txt">
                              Library
                             </div>
                     </li>
-                    <li ssName={(props.nav.sidebarActive==='history'?"active":"")}>
+                    <li className={(props.nav.sidebarActive==='history'?"active":"")}>
                         <HistoryIcon className={(props.nav.sidebarActive==='history'?"active-icon":"")+" li-icon "} style={{ fontSize: 22.5 }}/>
                             <div className="sidebar-txt">
                              History
@@ -199,7 +199,7 @@ function Siderbar(props){
                                     </div>
                             </div>
                         </li>
-                        <li Name={(props.nav.sidebarActive==='library'?"active":"")}>
+                        <li className={(props.nav.sidebarActive==='library'?"active":"")}>
                             <div className="li-content">
                                 <VideoLibraryIcon className={(props.nav.sidebarActive==='library'?"active-icon":"")+" li-icon "} />
                                 <div className="sidebar-txt">
