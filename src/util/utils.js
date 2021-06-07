@@ -61,7 +61,10 @@ export async function getHomeVideos(category){
             "bwCqWUmu6pk",
             "xwwPP8_wM7I",
         
-            "WeWXC_ivl5s" //my ids
+            "WeWXC_ivl5s", //my ids
+            "e_E9W2vsRbQ",
+            "-M_r8MKQ3mo",
+            "r9PeYPHdpNo"
         ];
 
             ShuffleVideoId(videosId);
