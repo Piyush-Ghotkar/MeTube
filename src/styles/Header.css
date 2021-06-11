@@ -269,12 +269,13 @@ input[type=text]:focus {
     }
 
     .ActiveMobileSearch{
-        /* position: absolute; */
+        position: absolute;
         background: #f9f9f9;
         width: 100%;
         height: 100%;
         z-index: 1000;
         opacity: 1;
+        top: 3rem;
     }
 
 
@@ -303,7 +304,7 @@ input[type=text]:focus {
     }
 
     .account-icon{
-        margin-left: 0.6rem;
+        /* margin-left: 0.6rem; */
     }
     
 
@@ -323,5 +324,6 @@ input[type=text]:focus {
     
     .header-bottom-margin{
         margin-left: 0rem;
+        margin-top: 2.5rem;
     }
 }

@@ -202,8 +202,8 @@
     }
 
     .video-duration{
-        transform: translate(23.2rem,-145%);
-        bottom: 0px;
+        transform: translate(-0.8rem,-145%);
+        bottom:-19px;
         right: 0px;
     }
 
